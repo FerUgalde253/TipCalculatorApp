@@ -18,7 +18,7 @@ final class TipCalculatorTestTests: XCTestCase {
         //When
         let tip1 = sut.calculateTip(of: amountBill, with: tipPercentage)
         //Assert
-        XCTAssertEqual(tip1, expectedResult)
+        XCTAssertEqual(tip1, expectedResult, "This result always needs to be equal")
     }
    
     func testTipCalculationNil_WhenReciveANegativeAmout_ShouldntPass(){
@@ -30,6 +30,6 @@ final class TipCalculatorTestTests: XCTestCase {
         //When
         let tip1 = sut.calculateTip(of: amountBill, with: tipPercentage)
         //Assert
-        XCTAssertNil(tip1)
+        XCTAssertNil(tip1, "This Assert need to nil if the user colocate a negative value, if not return True")
     }
 }
